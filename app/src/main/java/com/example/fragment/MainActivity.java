@@ -17,14 +17,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        managerFragment();
+        androidInfoPage();
+        javaInfoPage();
+    }
+
+    private void managerFragment() {
         fragmentManager = getSupportFragmentManager();
         androidFragment = new AndroidFragment();
         javaFragment = new JavaFragment();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.right_layout, androidFragment);
         fragmentTransaction.commit();
-        androidInfoPage();
-        javaInfoPage();
     }
 
     private void javaInfoPage() {
